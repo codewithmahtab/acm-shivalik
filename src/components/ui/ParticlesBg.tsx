@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticlesBg() {
   const [init, setInit] = useState(false);
@@ -20,12 +20,12 @@ export default function ParticlesBg() {
       id="tsparticles"
       className="absolute inset-0 z-0"
       options={{
-        background: { color: { value: "#000000" } },
+        background: { color: { value: '#000000' } },
         fpsLimit: 60,
         particles: {
-          color: { value: "#1e88e5" },
+          color: { value: '#1e88e5' },
           links: {
-            color: "#1e4a8a",
+            color: '#1e4a8a',
             distance: 180,
             enable: true,
             opacity: 0.08,
@@ -34,7 +34,7 @@ export default function ParticlesBg() {
           move: {
             enable: true,
             speed: 0.4,
-            outModes: { default: "bounce" },
+            outModes: { default: 'bounce' },
           },
           number: { value: 80, density: { enable: true } },
           opacity: { value: { min: 0.05, max: 0.2 } },
