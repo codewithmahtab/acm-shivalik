@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://acmshivalik.vercel.app',
-  },
+  }
 };
 
 export default function RootLayout({
