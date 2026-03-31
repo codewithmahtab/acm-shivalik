@@ -145,7 +145,7 @@ export default function Team() {
     <section
       id="team"
       ref={sectionRef}
-      className="relative w-full bg-black py-16 md:py-36 overflow-hidden"
+      className="relative w-full bg-black py-16 md:py-20 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[700px] h-[400px] bg-blue-600/5 rounded-full blur-[160px]" />

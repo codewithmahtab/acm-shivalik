@@ -19,7 +19,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-black border-t border-white/5 overflow-hidden">
+    <footer id='contact' className="relative w-full bg-black border-t border-white/5 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-16">

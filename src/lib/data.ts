@@ -14,7 +14,7 @@ export const teamMembers = [
     year: '3rd Year',
     branch: 'AIML',
     image:
-      'https://ui-avatars.com/api/?name=Rifat+Parvez&background=1e3a5f&color=1e88e5&size=128&bold=true',
+      '/images/team/viceChairperson.jpeg',
   },
   {
     id: 3,
@@ -152,20 +152,47 @@ export const facultyMembers = [
     name: 'Kshitij Jain',
     role: 'ACM Faculty Coordinator',
     image:
-      'https://ui-avatars.com/api/?name=Kshitij+Jain&background=1e3a5f&color=1e88e5&size=128&bold=true',
+      '/images/team/facultyCoordinator.jpeg',
   },
 ];
 
 export const events = [
   {
     id: 1,
-    tag: 'Hackathon',
-    title: 'HackShivalik',
-    description:
-      'A 12-hour hackathon where students built real-world solutions across domains like AI, Web, and IoT.',
+    type: 'Hackathon',
+    status: 'upcoming' as const,
+    title: 'National Level Hackathon 2K26',
+    desc: 'Join us for the National Level Hackathon 2K26. Solve real-world problems across domains like Smart Agriculture, Healthcare, Clean Tech, AI & Cybersecurity, and more.',
+    poster: 'https://lh7-rt.googleusercontent.com/formsz/AN7BsVBvdH19xJcHoL-cLSfm6mtVXUT0HZWRgy_qJT-0NrVlbp4kEF79gK5ZkhWDV7D9rMmBskSirKEje6v3oRbjAr398GdwUqfBVedrwthgWGnWAy-FybeJ3z2BkJDVqXUFBOjklD1whOzKpk_bGJt5usJOQKaX5NJmuL_yYDy2rZR3jIZwXWONN6_QcDCcvk7IFMPb5W3Lw9l2XCx6=w1024?key=GNfkgadBcAAancVxvJpfUg',
+    date: '10 Apr 2026',
+    time: 'Multi-Phase',
+    venue: 'Shivalik College of Engineering, Dehradun',
+    tags: ['AI & CyberSec', 'Smart Healthcare', 'Open Theme', '₹1.2L Prizes'],
+    highlights: [
+      { label: 'Phases', value: '3 Phases' },
+      { label: 'Team Size', value: '4 - 6' },
+      { label: 'Prizes Worth', value: '₹ 1.2 Lakh' },
+      { label: 'Location', value: 'Dehradun' },
+    ],
+    registerUrl: 'https://hacknation1-0.vercel.app/',
+  },
+  {
+    id: 2,
+    type: 'Hackathon',
+    status: 'past' as const,
+    title: 'HackShivalik 1.0',
+    desc: "ACM Chapter Shivalik's flagship 12-hour hackathon. Students built real-world solutions across domains like AI, Web, and IoT. A night of fast builds, big ideas, and real shipping.",
     date: '2025',
-    duration: '12 Hours',
-    participants: 120,
+    time: '12 Hours',
+    venue: 'Main Auditorium, SCE',
+    tags: ['Open Theme', '12 Hours', 'Team / Solo'],
+    highlights: [
+      { label: 'Duration', value: '12 Hours' },
+      { label: 'Team Size', value: '1 – 4' },
+      { label: 'Participants', value: '120+' },
+      { label: 'Location', value: 'Dehradun' },
+    ],
+    registerUrl: null,
   },
 ];
 

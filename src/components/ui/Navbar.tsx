@@ -7,13 +7,14 @@ const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Events', href: '#events' },
   { label: 'Domains', href: '#domains' },
-  { label: 'Projects', href: '#projects' },
   { label: 'Team', href: '#team' },
+  { label: 'Contact Us', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -30,14 +31,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 xl:px-12 h-[68px] flex justify-between md:grid md:grid-cols-3 items-center">
-        <Link href="/" className="flex items-center gap-2 w-fit">
+        <a href="#home" className="flex items-center gap-2 w-fit">
           <span className="text-blue-500 font-bold text-xl tracking-tight leading-none">
             ACM
           </span>
           <span className="text-white font-light text-xl tracking-[0.2em] uppercase leading-none">
             Shivalik
           </span>
-        </Link>
+        </a>
 
         <ul className="hidden md:flex items-center justify-center gap-7">
           {navLinks.map((link) => (
@@ -57,6 +58,10 @@ export default function Navbar() {
         <div className="flex items-center justify-end">
           <a
             href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsModalOpen(true);
+            }}
             className="hidden md:inline-flex items-center justify-center 
                        h-9 px-6 rounded-sm text-sm tracking-widest uppercase
                        border border-blue-500 text-blue-400 
@@ -105,7 +110,11 @@ export default function Navbar() {
           <li className="py-4">
             <a
               href="#"
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                setMenuOpen(false);
+                setIsModalOpen(true);
+              }}
               className="inline-flex items-center justify-center h-9 px-6 rounded-sm text-sm tracking-widest uppercase border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
             >
               Join Us
@@ -113,6 +122,29 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="bg-[#0a0a0a] border border-white/10 rounded-sm p-8 max-w-sm w-full relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute cursor-pointer top-4 right-4 text-gray-500 hover:text-white transition-colors"
+            >
+              ✕
+            </button>
+            <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Applications Opening Soon</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Registrations to join ACM Chapter Shivalik will open soon. Keep an eye out for updates!
+            </p>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="mt-6 cursor-pointer w-full py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-sm text-sm tracking-widest uppercase transition-colors"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
