@@ -21,6 +21,21 @@ export default function EventPopup() {
     }
   }, [liveEvent]);
 
+  // Shadcn-like Scroll Lock & Escape Close
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setIsOpen(false);
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = 'unset';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isOpen]);
+
   if (!liveEvent || !isOpen) return null;
 
   return (

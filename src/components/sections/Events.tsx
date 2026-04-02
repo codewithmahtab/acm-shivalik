@@ -23,17 +23,17 @@ function EventCard({ event }: { event: (typeof events)[0] }) {
         <div className="p-8 md:p-12 lg:border-r border-white/5 flex flex-col">
           {/* Type + Status badge */}
           <div className="flex items-center gap-3 mb-6">
-            <span className="text-[9px] tracking-[0.3em] uppercase text-gray-600">
+            <span className="text-[11px] tracking-[0.3em] uppercase text-gray-400 font-medium">
               {event.type}
             </span>
-            <span className="w-px h-3 bg-white/10" />
+            <span className="w-px h-3 bg-white/20" />
             {event.status === 'upcoming' ? (
-              <span className="inline-flex items-center gap-1.5 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 rounded-sm">
-                <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 text-[11px] tracking-widest uppercase px-3 py-1.5 border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 rounded-sm font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Upcoming
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-[9px] tracking-[0.15em] uppercase px-2.5 py-1 border border-gray-500/30 bg-gray-500/5 text-gray-400 rounded-sm">
+              <span className="inline-flex items-center gap-1.5 text-[11px] tracking-widest uppercase px-3 py-1.5 border border-gray-500/40 bg-gray-500/10 text-gray-300 rounded-sm font-semibold">
                 Past Event
               </span>
             )}
@@ -43,32 +43,32 @@ function EventCard({ event }: { event: (typeof events)[0] }) {
             {event.title}
           </h3>
 
-          <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-xl mb-8 flex-1">
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mb-10 flex-1 font-light">
             {event.desc}
           </p>
 
           {/* Meta */}
-          <div className="flex flex-wrap gap-6 mb-8">
-            <div className="flex items-center gap-2 text-gray-500">
-              <Calendar size={13} className="text-blue-500/60" />
-              <span className="text-xs tracking-wide">{event.date}</span>
+          <div className="flex flex-wrap gap-8 mb-10">
+            <div className="flex items-center gap-2.5 text-gray-300">
+              <Calendar size={14} className="text-blue-400" />
+              <span className="text-sm tracking-wide font-medium">{event.date}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-500">
-              <Clock size={13} className="text-blue-500/60" />
-              <span className="text-xs tracking-wide">{event.time}</span>
+            <div className="flex items-center gap-2.5 text-gray-300">
+              <Clock size={14} className="text-blue-400" />
+              <span className="text-sm tracking-wide font-medium">{event.time}</span>
             </div>
-            <div className="flex items-center gap-2 text-gray-500">
-              <MapPin size={13} className="text-blue-500/60" />
-              <span className="text-xs tracking-wide">{event.venue}</span>
+            <div className="flex items-center gap-2.5 text-gray-300">
+              <MapPin size={14} className="text-blue-400" />
+              <span className="text-sm tracking-wide font-medium">{event.venue}</span>
             </div>
           </div>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-2.5 mb-12">
             {event.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-[9px] tracking-[0.15em] uppercase px-3 py-1 border border-white/5 group-hover:border-blue-500/20 text-gray-600 group-hover:text-blue-400/60 rounded-sm transition-all duration-300"
+                className="text-[10px] tracking-widest uppercase px-4 py-1.5 border border-white/10 group-hover:border-blue-500/40 text-gray-400 group-hover:text-blue-300 rounded-sm transition-all duration-300 font-bold bg-white/2"
               >
                 {tag}
               </span>
@@ -81,30 +81,30 @@ function EventCard({ event }: { event: (typeof events)[0] }) {
               href={event.registerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn self-start inline-flex items-center gap-2 text-sm text-white bg-blue-500 hover:bg-blue-400 px-7 py-3 rounded-sm tracking-widest uppercase transition-all duration-300"
+              className="group/btn self-start inline-flex items-center gap-3 text-sm text-white bg-blue-500 hover:bg-blue-400 px-8 py-4 rounded-sm tracking-widest uppercase transition-all duration-300 font-bold shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
             >
               Register Now
-              <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
+              <ArrowUpRight size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform duration-300" />
             </a>
           ) : (
-            <span className="self-start inline-flex items-center gap-2 text-sm text-gray-600 border border-white/5 px-7 py-3 rounded-sm tracking-widest uppercase">
+            <span className="self-start inline-flex items-center gap-3 text-sm text-gray-400 border border-white/10 px-8 py-4 rounded-sm tracking-widest uppercase font-semibold bg-white/2">
               Event Concluded
             </span>
           )}
         </div>
 
         {/* Highlights sidebar */}
-        <div className="lg:w-64 xl:w-72 p-8 md:p-10 flex flex-col justify-center gap-6">
-          <p className="text-[9px] tracking-[0.3em] uppercase text-gray-600 mb-2">
+        <div className="lg:w-64 xl:w-80 p-10 md:p-12 flex flex-col justify-center gap-8 bg-black/10 backdrop-blur-sm">
+          <p className="text-[11px] tracking-[0.4em] uppercase text-blue-500/80 mb-2 font-bold">
             Event Highlights
           </p>
           {event.highlights.map((h) => (
             <div
               key={h.label}
-              className="flex flex-col gap-1 border-b border-white/5 pb-5 last:border-none last:pb-0"
+              className="flex flex-col gap-2 border-b border-white/10 pb-6 last:border-none last:pb-0 group/highlight"
             >
-              <span className="text-white text-xl font-bold tracking-tight">{h.value}</span>
-              <span className="text-[9px] text-gray-600 tracking-[0.2em] uppercase">{h.label}</span>
+              <span className="text-white text-3xl font-bold tracking-tighter group-hover:text-blue-400 transition-colors duration-300 tabular-nums">{h.value}</span>
+              <span className="text-[11px] text-gray-400 tracking-[0.3em] uppercase group-hover:text-gray-300 transition-colors duration-300 font-medium">{h.label}</span>
             </div>
           ))}
         </div>
@@ -184,9 +184,9 @@ export default function Events() {
         <div className="absolute bottom-0 right-0 w-[90%] sm:w-[400px] h-[400px] bg-blue-900/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="mb-6">
-          <span className="text-[9px] tracking-[0.35em] text-blue-500 uppercase font-medium">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
+        <div className="mb-0">
+          <span className="text-[11px] tracking-[0.4em] text-blue-500 uppercase font-semibold">
             02 — Events
           </span>
         </div>
@@ -209,7 +209,7 @@ export default function Events() {
           {/* Slider controls */}
           <div className="flex items-center gap-3 shrink-0 pb-1">
             {/* Slide counter */}
-            <span className="text-[9px] tracking-[0.2em] text-gray-600 uppercase tabular-nums hidden sm:block">
+            <span className="text-[11px] tracking-[0.3em] text-gray-400 uppercase tabular-nums hidden sm:block font-bold">
               {String(current + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
             </span>
 

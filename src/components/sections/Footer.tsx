@@ -10,11 +10,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:acm@shivalik.edu.in', label: 'Email' },
+  { icon: Instagram, href: 'https://www.instagram.com/acm_sgoc/', label: 'Instagram' },
+  { icon: Mail, href: 'mailto:kshitij.jain@shivalikcollege.edu.in', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -33,7 +30,7 @@ export default function Footer() {
                 Shivalik
               </span>
             </div>
-            <p className="text-gray-600 text-xs leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed mt-4">
               ACM Student Chapter at Shivalik College of Engineering, Dehradun.
               Building the future of computing — one student at a time.
             </p>
@@ -41,6 +38,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 mt-6">
               {socialLinks.map((s) => (
                 <a
+                  target='blank'
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
@@ -53,15 +51,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[9px] tracking-[0.3em] text-gray-600 uppercase mb-5">
+            <p className="text-[11px] tracking-[0.4em] text-blue-500 uppercase mb-6 font-bold">
               Navigation
             </p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-4">
               {footerLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-500 hover:text-white text-sm tracking-wide transition-colors duration-300"
+                    className="text-gray-400 hover:text-white text-[15px] tracking-wide transition-colors duration-300 font-medium"
                   >
                     {link.label}
                   </a>
@@ -71,25 +69,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[9px] tracking-[0.3em] text-gray-600 uppercase mb-5">
+            <p className="text-[11px] tracking-[0.4em] text-blue-500 uppercase mb-6 font-bold">
               Contact
             </p>
-            <ul className="flex flex-col gap-3">
-              <li className="text-gray-500 text-sm">acm@shivalik.edu.in</li>
-              <li className="text-gray-500 text-sm">
+            <ul className="flex flex-col gap-4">
+              <li className="text-gray-400 text-[15px] font-medium break-all">kshitij.jain@shivalikcollege.edu.in</li>
+              <li className="text-gray-400 text-[15px] font-medium">
                 Shivalik College of Engineering
               </li>
-              <li className="text-gray-500 text-sm">Dehradun, Uttarakhand</li>
+              <li className="text-gray-400 text-[15px] font-medium">Dehradun, Uttarakhand</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-700 text-xs tracking-wide">
+        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-gray-500 text-sm tracking-wide text-center sm:text-left leading-relaxed">
             &copy; {new Date().getFullYear()} ACM Student Chapter — Shivalik
             College of Engineering. All rights reserved.
           </p>
-          <p className="text-gray-700 text-xs tracking-wide">
+          <p className="text-gray-500 text-sm tracking-widest uppercase font-bold text-center sm:text-right">
             Association for Computing Machinery
           </p>
         </div>

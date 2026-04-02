@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Code2, Users, Lightbulb, Trophy } from 'lucide-react';
+import JoinModal from '../ui/JoinModal';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +38,8 @@ export default function About() {
   const textRef = useRef<HTMLDivElement>(null);
   const pillarsRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -113,9 +117,9 @@ export default function About() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[700px] h-[400px] bg-blue-600/5 rounded-full blur-[140px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-[9px] tracking-[0.35em] text-blue-500 uppercase font-medium">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
+        <div className="flex items-center gap-3 mb-8">
+          <span className="text-[11px] tracking-[0.4em] text-blue-500 uppercase font-semibold">
             01 — About
           </span>
         </div>
@@ -157,7 +161,7 @@ export default function About() {
               and learning from each other. From first-year coders to final-year
               engineers, everyone has a place here.
             </p>
-            <p className="text-gray-500 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               ACM is the world's largest educational and scientific computing
               society. Our chapter brings that global vision to campus — with
               local energy, real mentorship, and a culture of shipping.
@@ -166,10 +170,14 @@ export default function About() {
             <div className="pt-2">
               <a
                 href="#"
-                className="group inline-flex items-center gap-2 text-xs text-blue-400 hover:text-white tracking-widest uppercase transition-colors duration-300 border-b border-blue-500/30 hover:border-blue-500 pb-0.5"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsModalOpen(true);
+                }}
+                className="group inline-flex items-center gap-2 text-sm text-blue-400 hover:text-white tracking-widest uppercase transition-colors duration-300 border-b border-blue-500/30 hover:border-blue-500 pb-1 cursor-pointer"
               >
                 Become a member
-                <span className="group-hover:translate-x-1 transition-transform duration-300 inline-block">
+                <span className="group-hover:translate-x-1 transition-transform duration-300 inline-block font-bold">
                   →
                 </span>
               </a>
@@ -177,24 +185,29 @@ export default function About() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <div className="border border-white/5 bg-white/2 p-6 rounded-sm">
-              <p className="text-xs tracking-[0.2em] text-blue-500 uppercase mb-3">
+            <div className="border border-white/5 bg-white/2 p-7 rounded-sm group hover:border-blue-500/20 transition-all duration-300">
+              <p className="text-[10px] tracking-[0.25em] text-blue-500 uppercase mb-4 font-bold">
                 Our Mission
               </p>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-200 text-base leading-relaxed italic">
                 "To advance computing as a science and profession — and to
                 empower the next generation of engineers at Shivalik."
               </p>
             </div>
 
-            <div className="border border-white/5 bg-white/2 p-6 rounded-sm">
-              <p className="text-xs tracking-[0.2em] text-blue-500 uppercase mb-3">
-                Founded
+            <div className="border border-white/5 bg-white/2 p-7 rounded-sm group hover:border-blue-500/20 transition-all duration-300">
+              <div className="flex items-center justify-between mb-4">
+                <p className="text-[10px] tracking-[0.25em] text-blue-500 uppercase font-bold">
+                  Founded
+                </p>
+                <span className="text-[10px] tracking-widest text-blue-300/60 font-bold uppercase border border-blue-500/20 px-2 py-1 rounded-sm bg-blue-500/5">
+                  ID: 208685
+                </span>
+              </div>
+              <p className="text-white text-3xl font-bold tracking-tight">
+                2026
               </p>
-              <p className="text-white text-2xl font-bold tracking-tight">
-                2023
-              </p>
-              <p className="text-gray-600 text-xs tracking-wide mt-1">
+              <p className="text-gray-400 text-sm tracking-wide mt-2">
                 Shivalik College of Engineering, Dehradun
               </p>
             </div>
@@ -213,16 +226,17 @@ export default function About() {
               <div className="mb-4 w-9 h-9 flex items-center justify-center border border-blue-500/20 bg-blue-500/5 group-hover:bg-blue-500/10 rounded-sm transition-all duration-300">
                 <Icon size={16} className="text-blue-400" />
               </div>
-              <h3 className="text-white text-sm font-semibold tracking-wide mb-2">
+              <h3 className="text-white text-base font-bold tracking-wide mb-3">
                 {title}
               </h3>
-              <p className="text-gray-600 text-xs leading-relaxed group-hover:text-gray-500 transition-colors duration-300">
+              <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                 {desc}
               </p>
             </div>
           ))}
         </div>
       </div>
+      <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

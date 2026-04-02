@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import JoinModal from './JoinModal';
+
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -31,13 +33,22 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 xl:px-12 h-[68px] flex justify-between md:grid md:grid-cols-3 items-center">
-        <a href="#home" className="flex items-center gap-2 w-fit">
-          <span className="text-blue-500 font-bold text-xl tracking-tight leading-none">
-            ACM
-          </span>
-          <span className="text-white font-light text-xl tracking-[0.2em] uppercase leading-none">
-            Shivalik
-          </span>
+        <a href="#home" className="flex items-center gap-3 w-fit group">
+          <div className="relative">
+            <img
+              src="/ACM LOGO WHITE.png"
+              alt="ACM Shivalik"
+              className="h-9 w-auto object-contain filter brightness-125 transition-transform duration-300 group-hover:scale-110"
+            />
+          </div>
+          <div className="flex flex-col border-l border-white/10 pl-3">
+            <span className="text-white font-bold text-xl tracking-tighter leading-none">
+              ACM
+            </span>
+            <span className="text-blue-500 font-bold text-[12px] tracking-[0.3em] uppercase leading-none mt-1.5">
+              Shivalik
+            </span>
+          </div>
         </a>
 
         <ul className="hidden md:flex items-center justify-center gap-7">
@@ -45,7 +56,7 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="relative text-gray-400 hover:text-white text-sm tracking-wide transition-colors duration-300 
+                className="relative text-gray-400 hover:text-white text-[15px] font-medium tracking-wide transition-colors duration-300 
                            after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px 
                            after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
               >
@@ -63,10 +74,10 @@ export default function Navbar() {
               setIsModalOpen(true);
             }}
             className="hidden md:inline-flex items-center justify-center 
-                       h-9 px-6 rounded-sm text-sm tracking-widest uppercase
-                       border border-blue-500 text-blue-400 
+                       h-10 px-8 rounded-sm text-sm tracking-widest uppercase
+                       border-2 border-blue-500 text-blue-400 
                        hover:bg-blue-500 hover:text-white 
-                       transition-all duration-300"
+                       transition-all duration-300 font-bold shadow-lg shadow-blue-500/10"
           >
             Join Us
           </a>
@@ -123,28 +134,7 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-          <div className="bg-[#0a0a0a] border border-white/10 rounded-sm p-8 max-w-sm w-full relative">
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute cursor-pointer top-4 right-4 text-gray-500 hover:text-white transition-colors"
-            >
-              ✕
-            </button>
-            <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Applications Opening Soon</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Registrations to join ACM Chapter Shivalik will open soon. Keep an eye out for updates!
-            </p>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="mt-6 cursor-pointer w-full py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-sm text-sm tracking-widest uppercase transition-colors"
-            >
-              Got it
-            </button>
-          </div>
-        </div>
-      )}
+      <JoinModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </nav>
   );
 }

@@ -164,14 +164,14 @@ export const events = [
     title: 'National Level Hackathon 2K26',
     desc: 'Join us for the National Level Hackathon 2K26. Solve real-world problems across domains like Smart Agriculture, Healthcare, Clean Tech, AI & Cybersecurity, and more.',
     poster: 'https://lh7-rt.googleusercontent.com/formsz/AN7BsVBvdH19xJcHoL-cLSfm6mtVXUT0HZWRgy_qJT-0NrVlbp4kEF79gK5ZkhWDV7D9rMmBskSirKEje6v3oRbjAr398GdwUqfBVedrwthgWGnWAy-FybeJ3z2BkJDVqXUFBOjklD1whOzKpk_bGJt5usJOQKaX5NJmuL_yYDy2rZR3jIZwXWONN6_QcDCcvk7IFMPb5W3Lw9l2XCx6=w1024?key=GNfkgadBcAAancVxvJpfUg',
-    date: '10 Apr 2026',
+    date: '16 - 17 APRIL 2026',
     time: 'Multi-Phase',
     venue: 'Shivalik College of Engineering, Dehradun',
-    tags: ['AI & CyberSec', 'Smart Healthcare', 'Open Theme', '₹1.2L Prizes'],
+    tags: ['AI & CyberSec', 'Smart Healthcare', 'Open Theme', '₹1.5L Prizes'],
     highlights: [
       { label: 'Phases', value: '3 Phases' },
       { label: 'Team Size', value: '4 - 6' },
-      { label: 'Prizes Worth', value: '₹ 1.2 Lakh' },
+      { label: 'Prizes Worth', value: '₹ 1.5 Lakh' },
       { label: 'Location', value: 'Dehradun' },
     ],
     registerUrl: 'https://hacknation1-0.vercel.app/',
@@ -261,7 +261,7 @@ export const codeOfConduct = [
 
 export const stats = [
   { label: 'Members', value: '18+' },
-  { label: 'Hackathons', value: '1' },
-  { label: 'Domains', value: '6' },
+  { label: 'Hackathons', value: '2' },
+  { label: 'Domains', value: '9' },
   { label: 'Years Active', value: '1+' },
 ];

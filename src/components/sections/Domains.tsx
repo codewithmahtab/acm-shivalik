@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Cpu, Code2, Layers, BarChart2, FlaskConical } from 'lucide-react';
+import { Cpu, Code2, Layers, BarChart2, FlaskConical, MessageCircle, Mic2, Presentation, Rocket } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,6 +74,58 @@ const domains = [
     glow: 'from-orange-500/10 to-transparent',
     tagStyle: 'group-hover:border-orange-500/20 group-hover:text-orange-400/60',
   },
+  {
+    id: '06',
+    icon: MessageCircle,
+    title: 'Community',
+    tags: ['WhatsApp', 'Outreach', 'Networking', 'Discord'],
+    desc: 'The heart of ACM. Managing our internal communication groups and building a hyper-active community of engineers through WhatsApp and Discord.',
+    accent: 'cyan',
+    border: 'group-hover:border-cyan-500/40',
+    iconBg: 'bg-cyan-500/10 border-cyan-500/20',
+    iconColor: 'text-cyan-400',
+    glow: 'from-cyan-500/10 to-transparent',
+    tagStyle: 'group-hover:border-cyan-500/20 group-hover:text-cyan-400/60',
+  },
+  {
+    id: '07',
+    icon: Mic2,
+    title: 'Seminars',
+    tags: ['Workshops', 'Expert Talks', 'Q&A', 'Skill-up'],
+    desc: 'Knowledge at scale. Hosting industry experts and faculty for hands-on sessions that bridge the gap between classroom and career.',
+    accent: 'fuchsia',
+    border: 'group-hover:border-fuchsia-500/40',
+    iconBg: 'bg-fuchsia-500/10 border-fuchsia-500/20',
+    iconColor: 'text-fuchsia-400',
+    glow: 'from-fuchsia-500/10 to-transparent',
+    tagStyle: 'group-hover:border-fuchsia-500/20 group-hover:text-fuchsia-400/60',
+  },
+  {
+    id: '08',
+    icon: Presentation,
+    title: 'Conference',
+    tags: ['Academic', 'Papers', 'International', 'Summits'],
+    desc: 'Global exposure. Organizing and participating in computing conferences to represent Shivalik at a worldwide level.',
+    accent: 'teal',
+    border: 'group-hover:border-teal-500/40',
+    iconBg: 'bg-teal-500/10 border-teal-500/20',
+    iconColor: 'text-teal-400',
+    glow: 'from-teal-500/10 to-transparent',
+    tagStyle: 'group-hover:border-teal-500/20 group-hover:text-teal-400/60',
+  },
+  {
+    id: '09',
+    icon: Rocket,
+    title: 'Startups',
+    tags: ['Incubation', 'Pitching', 'Ideation', 'SaaS'],
+    desc: 'From code to product. Supporting student entrepreneurs with the resources and tech guidance needed to ship their first startup.',
+    accent: 'rose',
+    border: 'group-hover:border-rose-500/40',
+    iconBg: 'bg-rose-500/10 border-rose-500/20',
+    iconColor: 'text-rose-400',
+    glow: 'from-rose-500/10 to-transparent',
+    tagStyle: 'group-hover:border-rose-500/20 group-hover:text-rose-400/60',
+  },
 ];
 
 export default function Domains() {
@@ -134,9 +186,9 @@ export default function Domains() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[800px] h-[500px] bg-blue-600/5 rounded-full blur-[160px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="mb-6">
-          <span className="text-[9px] tracking-[0.35em] text-blue-500 uppercase font-medium">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
+        <div className="mb-0">
+          <span className="text-[11px] tracking-[0.4em] text-blue-500 uppercase font-semibold">
             03 — Domains
           </span>
         </div>
@@ -149,9 +201,9 @@ export default function Domains() {
               work on.
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 text-sm md:text-base max-w-lg leading-relaxed">
-            Five domains. One chapter. Each a distinct mindset — together they
-            form the full picture of what ACM Shivalik does.
+          <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed font-light">
+            Nine specialized domains. One chapter. Together forming the full 
+            picture of technical excellence at ACM Shivalik.
           </p>
         </div>
 
@@ -163,30 +215,16 @@ export default function Domains() {
           />
         </div>
 
-        <div className="domain-grid space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {domains.slice(0, 3).map((domain) => (
-              <DomainCard
-                key={domain.id}
-                domain={domain}
-                isActive={activeId === domain.id}
-                onEnter={() => setActiveId(domain.id)}
-                onLeave={() => setActiveId(null)}
-              />
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 lg:w-2/3 lg:mx-auto">
-            {domains.slice(3).map((domain) => (
-              <DomainCard
-                key={domain.id}
-                domain={domain}
-                isActive={activeId === domain.id}
-                onEnter={() => setActiveId(domain.id)}
-                onLeave={() => setActiveId(null)}
-              />
-            ))}
-          </div>
+        <div className="domain-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {domains.map((domain) => (
+            <DomainCard
+              key={domain.id}
+              domain={domain}
+              isActive={activeId === domain.id}
+              onEnter={() => setActiveId(domain.id)}
+              onLeave={() => setActiveId(null)}
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -229,19 +267,19 @@ function DomainCard({
         <Icon size={17} className={domain.iconColor} />
       </div>
 
-      <h3 className="relative z-10 text-white text-base font-semibold tracking-tight mb-2">
+      <h3 className="relative z-10 text-white text-lg font-bold tracking-tight mb-3">
         {domain.title}
       </h3>
 
-      <p className="relative z-10 text-gray-600 text-xs leading-relaxed group-hover:text-gray-500 transition-colors duration-300 mb-5">
+      <p className="relative z-10 text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300 mb-6">
         {domain.desc}
       </p>
 
-      <div className="relative z-10 flex flex-wrap gap-1.5">
+      <div className="relative z-10 flex flex-wrap gap-2">
         {domain.tags.map((tag) => (
           <span
             key={tag}
-            className={`text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 border border-white/5 text-gray-600 rounded-sm transition-all duration-300 ${domain.tagStyle}`}
+            className={`text-[10px] tracking-widest uppercase px-2.5 py-1 border border-white/10 text-gray-400 rounded-sm transition-all duration-300 ${domain.tagStyle}`}
           >
             {tag}
           </span>

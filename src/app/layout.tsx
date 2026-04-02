@@ -1,17 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/ui/Navbar';
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-outfit',
 });
 
 export const metadata: Metadata = {
-  title: 'ACM Shivalik',
+  title: 'ACM Shivalik | Student Chapter',
   description:
     'ACM Student Chapter at Shivalik College of Engineering — building the future of computing.',
+  icons: {
+    icon: '/ACM LOGO WHITE.png',
+  },
   keywords: [
     'ACM',
     'Shivalik',
@@ -22,14 +25,14 @@ export const metadata: Metadata = {
     'Dehradun',
   ],
   openGraph: {
-    title: 'ACM Shivalik',
+    title: 'ACM Shivalik | Student Chapter',
     description:
       'ACM Student Chapter at Shivalik College of Engineering — building the future of computing.',
     url: 'https://acmshivalik.vercel.app',
     siteName: 'ACM Shivalik',
     images: [
       {
-        url: '/images/og-placeholder.jpg',
+        url: '/ACM LOGO WHITE.png',
         width: 1200,
         height: 630,
         alt: 'ACM Shivalik',
@@ -40,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ACM Shivalik',
+    title: 'ACM Shivalik | Student Chapter',
     description: 'ACM Student Chapter at Shivalik College of Engineering.',
-    images: ['/images/og-placeholder.jpg'],
+    images: ['/ACM LOGO WHITE.png'],
   },
   alternates: {
     canonical: 'https://acmshivalik.vercel.app',
@@ -55,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={outfit.variable}>
       <body className="bg-black text-white antialiased">
         <Navbar />
         {children}

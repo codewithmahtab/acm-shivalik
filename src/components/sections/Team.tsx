@@ -36,12 +36,12 @@ function MemberCard({
 
       <div className="flex flex-col justify-between flex-1 px-5 py-4 overflow-hidden">
         <div>
-          <h3 className="text-white font-bold text-base tracking-wide leading-tight font-mono">
+          <h3 className="text-white font-bold text-lg tracking-tight leading-tight">
             {name}
           </h3>
-          <p className="text-blue-400 text-xs mt-1 tracking-wide">{role}</p>
+          <p className="text-blue-400 text-sm mt-1.5 tracking-wide font-medium">{role}</p>
           {year && branch && (
-            <p className="text-gray-700 text-[10px] mt-0.5 tracking-wide">
+            <p className="text-gray-400 text-xs mt-1 tracking-wide">
               {year} &middot; {branch}
             </p>
           )}
@@ -69,8 +69,8 @@ function MemberCard({
             <span className="w-2 h-2 border border-white/10" />
             <span className="w-8 h-px bg-white/10" />
           </div>
-          <div className="w-8 h-8 bg-blue-500/10 border border-blue-500/30 rotate-45 flex items-center justify-center shrink-0">
-            <span className="text-blue-400 text-[7px] font-bold tracking-tight -rotate-45">
+          <div className="w-10 h-10 bg-blue-500/10 border border-blue-500/30 rotate-45 flex items-center justify-center shrink-0">
+            <span className="text-blue-400 text-[9px] font-bold tracking-tight -rotate-45">
               ACM
             </span>
           </div>
@@ -152,8 +152,8 @@ export default function Team() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="mb-6">
-          <span className="text-[9px] tracking-[0.35em] text-blue-500 uppercase font-medium">
+        <div className="mb-0">
+          <span className="text-[11px] tracking-[0.4em] text-blue-500 uppercase font-semibold">
             04 — Team
           </span>
         </div>
@@ -166,7 +166,7 @@ export default function Team() {
               behind it.
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 text-sm md:text-base max-w-lg leading-relaxed">
+          <p className="mt-6 text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed font-light">
             18 students from Shivalik College of Engineering — building,
             organizing, and leading ACM Shivalik forward.
           </p>
@@ -181,7 +181,7 @@ export default function Team() {
         </div>
 
         <div className="mb-14">
-          <p className="text-[9px] tracking-[0.3em] text-gray-600 uppercase mb-6 border-b border-white/5 pb-3">
+          <p className="text-[11px] tracking-[0.4em] text-gray-400 uppercase mb-8 border-b border-white/10 pb-4 font-bold">
             Faculty Coordinator
           </p>
           <div className="max-w-md mx-auto">
@@ -197,7 +197,7 @@ export default function Team() {
         </div>
 
         <div className="members-grid">
-          <p className="text-[9px] tracking-[0.3em] text-gray-600 uppercase mb-6 border-b border-white/5 pb-3">
+          <p className="text-[11px] tracking-[0.4em] text-gray-400 uppercase mb-8 border-b border-white/10 pb-4 font-bold">
             Student Members
           </p>
 
