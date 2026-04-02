@@ -181,18 +181,32 @@ export default function Team() {
         </div>
 
         <div className="mb-14">
-          <p className="text-[11px] tracking-[0.4em] text-gray-400 uppercase mb-8 border-b border-white/10 pb-4 font-bold">
+          <p className="text-[11px] tracking-[0.4em] text-gray-400 uppercase mb-8 border-b border-white/10 pb-4 font-bold text-center sm:text-left">
             Faculty Coordinator
           </p>
-          <div className="max-w-md mx-auto">
-            {facultyMembers.map((f) => (
-              <MemberCard
-                key={f.id}
-                name={f.name}
-                role={f.role}
-                image={f.image}
-              />
-            ))}
+          <div className="space-y-6">
+            <div className="max-w-md mx-auto">
+              {facultyMembers.slice(0, 1).map((f) => (
+                <MemberCard
+                  key={f.id}
+                  name={f.name}
+                  role={f.role}
+                  image={f.image}
+                />
+              ))}
+            </div>
+            {facultyMembers.length > 1 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {facultyMembers.slice(1).map((f) => (
+                  <MemberCard
+                    key={f.id}
+                    name={f.name}
+                    role={f.role}
+                    image={f.image}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

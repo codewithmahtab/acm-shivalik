@@ -151,8 +151,25 @@ export const facultyMembers = [
     id: 1,
     name: 'Kshitij Jain',
     role: 'ACM Faculty Coordinator',
-    image:
-      '/images/team/facultyCoordinator.jpeg',
+    image: '/images/team/facultyCoordinator.jpeg',
+  },
+  {
+    id: 2,
+    name: 'Santosh sir',
+    role: 'Faculty Coordinator',
+    image: '/images/team/santosh.jpeg',
+  },
+  {
+    id: 3,
+    name: 'Shivali',
+    role: 'Faculty Coordinator',
+    image: '/images/team/shivali.jpeg',
+  },
+  {
+    id: 4,
+    name: 'Shiv',
+    role: 'Faculty Coordinator',
+    image: '/images/team/shiv.jpeg',
   },
 ];
 
